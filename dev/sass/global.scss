@@ -1,0 +1,16 @@
+@import '_font';
+@import '_variables';
+@import '_mixin';
+@import '_header';
+@import '_footer';
+@import '_component';
+
+/* Global
+   ============================= */
+::selection {
+    background-color: $UI_Selection;
+}
+
+body {
+    background: $UI_Light;
+}
