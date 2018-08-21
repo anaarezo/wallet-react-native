@@ -8,7 +8,8 @@ var clean         = require('gulp-clean');
 var jshint        = require('gulp-jshint');
 var connect       = require('gulp-connect');
 var fileinclude   = require('gulp-file-include');
-var browserSync = require('browser-sync').create();
+var browserSync   = require('browser-sync').create();
+var sourcemaps    = require('gulp-sourcemaps');
 
 var bases = {
     dev: 'dev/',
@@ -44,11 +45,13 @@ gulp.task('html', function () {
 
 gulp.task('sass', function () {
     return gulp.src(paths.sass)
+        .pipe(sourcemaps.init())
         .pipe(sass({
-            'sourcemap=none': true,
+            'sourcemap=none': false,
             noCache: true,
             style:'compressed'
         }).on('error', sass.logError))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./build/css/'))
         .pipe(browserSync.stream());
 });

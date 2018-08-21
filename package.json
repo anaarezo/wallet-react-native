@@ -21,7 +21,8 @@
   "author": "Ana Arezo",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "gulp-sourcemaps": "^2.6.4"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
